@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            justify-content: center;
+        }
+        #container { 
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+            width : fit-content;
+            height: fit-content;
+            border: 10px solid #021838;
+            margin: 50px 300px 0px 300px;
+            background-color: #021838;
+            overflow: hidden;
+        }
+        #box1{
+            height: 300px;
+            width: 200px;
+            position: relative;
+            background-color:#855DC5;
+        }
+        #box2{
+            height: 300px;
+            width: 200px;
+            position: relative;
+            background-color:#D75CB3;
+        }
+        #box3{
+            height: 300px;
+            width: 200px;
+            position: relative;
+            background-color: #FE6F91;
+        }
+        #box4{
+            height: 300px;
+            width: 200px;
+            position: relative;
+            background-color: #FF9573;
+        }
+        #box5{
+            height: 300px;
+            width: 200px;
+            position: relative;
+            background-color: #FFC560;
+        }
+        button {
+            width: 100px;
+            height: 30px;
+            margin-top: 50px;
+            border-style: none;
+            align-items: center;
+            color: white;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 16px;
+            letter-spacing: 2px;
+        }
+        button:hover {
+            border: 2px solid #0056C4;
+            border-radius: 3px;
+            cursor: pointer
+        }
+        #buttonsContainer {
+            display: flex;
+            width : 1000px;
+            height: 250px;
+            padding: 5px;   
+            margin: 0 300px 0px 300px;
+            justify-content: space-evenly;
+            position: relative;
+        }
+        #startButton {
+            background-color: #009261;
+        }   
+        #stopButton {
+            background-color: #E31F21;
+        }
+        @keyframes boxAnimation1 {
+            0%{ top: 0 }
+            25%{ top: 50px } 
+            75%{ top: 150px }
+            100%{ top: 250px }
+        }
+        @keyframes boxAnimation2 {
+            0%{ top: 0 }
+            25%{ top: 70px }
+            75%{ top: 180px }
+            100%{ top: 230px }
+        }
+        @keyframes boxAnimation3 {
+            0%{ top: 0 }
+            25%{ top: 50px }
+            75%{ top: 160px} 
+            100%{ top: 270px }
+        }
+        @keyframes boxAnimation4 {
+            0%{ top: 0 }
+            25%{ top: 90px }
+            75%{ top: 200px }
+            100%{ top: 430px }
+        }
+        @keyframes boxAnimation5 {
+            0%{ top: 0 }
+            25%{ top: 40px }
+            75%{ top: 230px }
+            100%{ top: 240px }
+        }
+    </style>
+    <title>boxAnimation</title>
+</head>
+<body>
+    <div id = "container">
+        <div id = "box1"></div>
+        <div id = "box2"></div>
+        <div id = "box3"></div>
+        <div id = "box4"></div>
+        <div id = "box5"></div>
+    </div>
+    <div id = "buttonsContainer">
+        <button id = "startButton" >Start</button>
+        <button id = "stopButton">Stop</button>
+    </div>
+</body>
+<script>
+    const box1 = document.getElementById('box1');
+    const box2 = document.getElementById('box2');
+    const box3 = document.getElementById('box3');
+    const box4 = document.getElementById('box4');
+    const box5 = document.getElementById('box5');
+    const startButton = document.getElementById('startButton');
+    const stopButton = document.getElementById('stopButton');
+    startButton.addEventListener("click", 
+    function start(){
+        box1.style.animation = 'boxAnimation1 1s linear infinite alternate-reverse'
+        box2.style.animation = 'boxAnimation2 1s linear infinite alternate-reverse'
+        box3.style.animation = 'boxAnimation3 1s linear infinite alternate-reverse'
+        box4.style.animation = 'boxAnimation4 1s linear infinite alternate-reverse'
+        box5.style.animation = 'boxAnimation5 1s linear infinite alternate-reverse'
+    })
+    stopButton.addEventListener("click", 
+    function stop(){
+        box1.style.animationPlayState = 'paused'
+        box2.style.animationPlayState = 'paused'
+        box3.style.animationPlayState = 'paused'
+        box4.style.animationPlayState = 'paused'
+        box5.style.animationPlayState = 'paused'
+    })  
+</script>
+</html>
